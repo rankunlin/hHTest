@@ -1,0 +1,69 @@
+{
+    "channels": [
+        {
+            "name": "SR",
+            "samples": [
+                {
+                    "data": [
+                        1.0
+                    ],
+                    "modifiers": [
+                        {
+                            "data": null,
+                            "name": "mu",
+                            "type": "normfactor"
+                        }
+                    ],
+                    "name": "sig"
+                },
+                {
+                    "data": [
+                        100.0
+                    ],
+                    "modifiers": [
+                        {
+                            "data": {
+                                "hi": 1.1,
+                                "lo": 0.9
+                            },
+                            "name": "bkgNorm",
+                            "type": "normsys"
+                        }
+                    ],
+                    "name": "bkg"
+                }
+            ]
+        }
+    ],
+    "measurements": [
+        {
+            "config": {
+                "parameters": [
+                    {
+                        "bounds": [
+                            [
+                                -100.0,
+                                100.0
+                            ]
+                        ],
+                        "inits": [
+                            0
+                        ],
+                        "name": "mu"
+                    }
+                ],
+                "poi": "mu"
+            },
+            "name": "hHTest"
+        }
+    ],
+    "observations": [
+        {
+            "data": [
+                100.0
+            ],
+            "name": "SR"
+        }
+    ],
+    "version": "1.0.0"
+}

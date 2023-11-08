@@ -1,0 +1,39 @@
+General:
+  Measurement: hHTest
+  POI: mu
+  InputPath: input/{SamplePath}
+  HistogramFolder: hist
+
+Regions:
+  - Name: SR
+    Variable: number
+    Binning: [0.,1.]
+
+Samples:
+  - Name: sig
+    Tree: tree
+    DisableStaterror: True
+    SamplePath: sig.root
+  - Name: bkg
+    Tree: tree
+    DisableStaterror: True
+    SamplePath: data.root
+  - Name: data
+    Tree: tree
+    Data: True
+    SamplePath: data.root
+
+NormFactors:
+  - Name: mu
+    Samples: sig
+    Nominal: 0
+    Bounds: [-100.,100.]
+
+Systematics:
+  - Name: bkgNorm
+    Type: Normalization
+    Up:
+      Normalization: 0.1
+    Down:
+      Normalization: -0.1
+    Samples: bkg
